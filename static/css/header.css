@@ -1,0 +1,94 @@
+/*
+ * header.css
+ * ─────────────────────────────────────────────────────────────
+ * Styles for the Header and Stats Row components.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header {
+  text-align:    center;
+  margin-bottom: 2.5rem;
+  animation:     fadeDown 0.6s ease both;
+}
+
+/* Pill badge above the title (e.g. "Naive Bayes Classifier") */
+.header__badge {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            6px;
+  background:     rgba(108, 99, 255, 0.15);
+  border:         1px solid rgba(108, 99, 255, 0.3);
+  color:          var(--color-accent-light);
+  font-size:      11px;
+  font-weight:    500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding:        5px 14px;
+  border-radius:  100px;
+  margin-bottom:  1.2rem;
+}
+
+/* Animated dot inside the badge — signals a live model */
+.header__badge::before {
+  content:       '';
+  width:         6px;
+  height:        6px;
+  border-radius: 50%;
+  background:    var(--color-accent-light);
+  animation:     pulse 2s infinite;
+}
+
+/* Project title with gradient text */
+.header__title {
+  font-family:             var(--font-display);
+  font-size:               clamp(2rem, 5vw, 3rem);
+  font-weight:             800;
+  line-height:             1.1;
+  letter-spacing:          -0.02em;
+  background:              linear-gradient(135deg, #fff 0%, var(--color-accent-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  margin-bottom:           0.75rem;
+}
+
+.header__subtitle {
+  color:       var(--color-muted);
+  font-size:   15px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+
+/* ── Stats Row ──────────────────────────────────────────────── */
+.stats {
+  display:         flex;
+  gap:             12px;
+  justify-content: center;
+  margin-bottom:   2rem;
+  animation:       fadeUp 0.6s 0.1s ease both;
+}
+
+.stat {
+  background:    var(--color-surface);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding:       12px 20px;
+  text-align:    center;
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size:   20px;
+  font-weight: 700;
+  color:       var(--color-accent-light);
+}
+
+.stat__label {
+  font-size:      11px;
+  color:          var(--color-muted);
+  margin-top:     2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

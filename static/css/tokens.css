@@ -1,0 +1,51 @@
+/*
+ * tokens.css
+ * ─────────────────────────────────────────────────────────────
+ * Design Tokens — single source of truth for every color,
+ * spacing, radius, and font used across the entire app.
+ *
+ * SOLID — Open/Closed Principle:
+ *   To retheme the whole app, only edit this file.
+ *   No other CSS file needs to change.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+:root {
+
+  /* ── Backgrounds ────────────────────────────────────────── */
+  --color-bg:          #0a0a0f;   /* page background          */
+  --color-surface:     #13131a;   /* card / panel background  */
+  --color-surface-alt: #1c1c27;   /* input / hover background */
+
+  /* ── Borders ────────────────────────────────────────────── */
+  --color-border:       rgba(255, 255, 255, 0.07);  /* default  */
+  --color-border-hover: rgba(255, 255, 255, 0.13);  /* hovered  */
+  --color-border-focus: rgba(108, 99,  255, 0.50);  /* focused  */
+
+  /* ── Text ───────────────────────────────────────────────── */
+  --color-text:  #f0f0f5;  /* primary   */
+  --color-muted: #7b7b9a;  /* secondary */
+
+  /* ── Brand accent ───────────────────────────────────────── */
+  --color-accent:       #6c63ff;  /* buttons, links     */
+  --color-accent-hover: #7c75ff;  /* button hover       */
+  --color-accent-light: #a78bfa;  /* badge, stat values */
+
+  /* ── Semantic result colors ─────────────────────────────── */
+  --color-ham:     #22d3a0;
+  --color-spam:    #ff5c7a;
+  --color-ham-bg:  rgba(34,  211, 160, 0.08);
+  --color-spam-bg: rgba(255,  92, 122, 0.08);
+
+  /* ── Border radii ───────────────────────────────────────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* ── Transitions ────────────────────────────────────────── */
+  --transition: 0.2s ease;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-display: 'Syne',    sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}

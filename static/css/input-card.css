@@ -1,0 +1,117 @@
+/*
+ * input-card.css
+ * ─────────────────────────────────────────────────────────────
+ * Styles for the main input card:
+ *   - Card wrapper
+ *   - Textarea + character counter
+ *   - Analyze (primary) and Clear (secondary) buttons
+ *   - Loading spinner
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* ── Card wrapper ───────────────────────────────────────────── */
+.card {
+  background:    var(--color-surface);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding:       2rem;
+  animation:     fadeUp 0.6s 0.2s ease both;
+}
+
+/* ── Textarea label ─────────────────────────────────────────── */
+.input__label {
+  display:        block;
+  font-size:      12px;
+  font-weight:    500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color:          var(--color-muted);
+  margin-bottom:  10px;
+}
+
+/* ── Message textarea ───────────────────────────────────────── */
+.input__textarea {
+  width:         100%;
+  background:    var(--color-surface-alt);
+  border:        1px solid var(--color-border-hover);
+  border-radius: var(--radius-md);
+  padding:       16px;
+  color:         var(--color-text);
+  font-family:   var(--font-body);
+  font-size:     15px;
+  font-weight:   300;
+  line-height:   1.6;
+  resize:        none;
+  min-height:    130px;
+  outline:       none;
+  transition:    border-color var(--transition);
+}
+
+.input__textarea::placeholder { color: var(--color-muted); }
+.input__textarea:focus        { border-color: var(--color-border-focus); }
+
+/* ── Character counter ──────────────────────────────────────── */
+.input__char-count {
+  text-align:    right;
+  font-size:     12px;
+  color:         var(--color-muted);
+  margin-top:    6px;
+  margin-bottom: 16px;
+}
+
+/* ── Button row ─────────────────────────────────────────────── */
+.btn-row {
+  display: flex;
+  gap:     10px;
+}
+
+/* Primary — Analyze button */
+.btn--primary {
+  flex:            1;
+  background:      var(--color-accent);
+  color:           #fff;
+  border:          none;
+  border-radius:   var(--radius-md);
+  padding:         14px 24px;
+  font-family:     var(--font-display);
+  font-size:       15px;
+  font-weight:     600;
+  cursor:          pointer;
+  transition:      background var(--transition), transform var(--transition);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             8px;
+}
+
+.btn--primary:hover    { background: var(--color-accent-hover); transform: translateY(-1px); }
+.btn--primary:active   { transform: none; }
+.btn--primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Secondary — Clear button */
+.btn--secondary {
+  background:    transparent;
+  border:        1px solid var(--color-border-hover);
+  color:         var(--color-muted);
+  border-radius: var(--radius-md);
+  padding:       14px 18px;
+  font-size:     14px;
+  cursor:        pointer;
+  transition:    all var(--transition);
+}
+
+.btn--secondary:hover {
+  color:      var(--color-text);
+  background: var(--color-surface-alt);
+}
+
+/* ── Loading spinner (inside Analyze button) ────────────────── */
+.spinner {
+  width:            16px;
+  height:           16px;
+  border:           2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius:    50%;
+  animation:        spin 0.6s linear infinite;
+  display:          none; /* shown by JS during loading */
+}

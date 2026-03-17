@@ -1,0 +1,66 @@
+/*
+ * examples.css
+ * ─────────────────────────────────────────────────────────────
+ * Styles for the Example Messages component.
+ * Buttons are built dynamically by UI.js (renderExamples).
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* ── Section wrapper ────────────────────────────────────────── */
+.examples {
+  margin-top: 1.5rem;
+  animation:  fadeUp 0.6s 0.3s ease both;
+}
+
+/* Section title */
+.examples__title {
+  font-size:      11px;
+  font-weight:    500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color:          var(--color-muted);
+  margin-bottom:  10px;
+}
+
+/* 2-column grid of example buttons */
+.examples__grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   8px;
+}
+
+/* ── Individual example button ──────────────────────────────── */
+.example-btn {
+  background:    var(--color-surface);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding:       12px 14px;
+  text-align:    left;
+  cursor:        pointer;
+  transition:    all var(--transition);
+  color:         var(--color-muted);
+  font-family:   var(--font-body);
+  font-size:     12px;
+  line-height:   1.5;
+}
+
+.example-btn:hover {
+  border-color: var(--color-border-hover);
+  color:        var(--color-text);
+  background:   var(--color-surface-alt);
+}
+
+/* SPAM / HAM tag inside each button */
+.example-btn__tag {
+  display:        inline-block;
+  font-size:      9px;
+  font-weight:    600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding:        2px 7px;
+  border-radius:  4px;
+  margin-bottom:  5px;
+}
+
+.example-btn__tag--spam { background: rgba(255,  92, 122, 0.15); color: var(--color-spam); }
+.example-btn__tag--ham  { background: rgba(34,  211, 160, 0.15); color: var(--color-ham);  }

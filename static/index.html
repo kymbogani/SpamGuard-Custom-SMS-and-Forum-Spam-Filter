@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpamGuard — SMS & Forum Spam Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="static/css/tokens.css"     />
+  <link rel="stylesheet" href="static/css/base.css"       />
+  <link rel="stylesheet" href="static/css/header.css"     />
+  <link rel="stylesheet" href="static/css/input-card.css" />
+  <link rel="stylesheet" href="static/css/result.css"     />
+  <link rel="stylesheet" href="static/css/examples.css"   />
+  <link rel="stylesheet" href="static/css/footer.css"     />
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <main class="container">
+    <header class="header">
+      <div class="header__badge">Naive Bayes Classifier</div>
+      <h1 class="header__title">SpamGuard</h1>
+      <p class="header__subtitle">AI-powered SMS &amp; Forum spam detection.<br/>Paste any message to instantly analyze it.</p>
+    </header>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><div class="stat__value">96%</div><div class="stat__label">Accuracy</div></div>
+      <div class="stat" role="listitem"><div class="stat__value">Naive Bayes</div><div class="stat__label">Model</div></div>
+      <div class="stat" role="listitem"><div class="stat__value">Real-time</div><div class="stat__label">Prediction</div></div>
+    </div>
+    <section class="card" aria-label="Message analyzer">
+      <label class="input__label" for="messageInput">Message to analyze</label>
+      <textarea id="messageInput" class="input__textarea" placeholder="Type or paste a message here..."></textarea>
+      <div class="input__char-count"><span id="charCount">0</span> characters</div>
+      <div class="btn-row">
+        <button id="analyzeBtn" class="btn--primary">
+          <span id="btnLabel">Analyze Message</span>
+          <div class="spinner" id="spinner" aria-hidden="true"></div>
+        </button>
+        <button class="btn--secondary" onclick="App.clear()">Clear</button>
+      </div>
+      <div id="resultPanel" class="result" role="status" aria-live="polite">
+        <div class="result__top">
+          <div class="result__verdict">
+            <div class="result__icon" id="resultIcon"></div>
+            <div>
+              <div class="result__label"       id="resultLabel"></div>
+              <div class="result__description" id="resultDescription"></div>
+            </div>
+          </div>
+          <div class="result__confidence-pill" id="confidencePill"></div>
+        </div>
+        <div class="confidence-bar">
+          <div class="confidence-bar__header">
+            <span>Confidence level</span>
+            <span id="confidenceText"></span>
+          </div>
+          <div class="confidence-bar__track">
+            <div class="confidence-bar__fill" id="confidenceFill"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="examples">
+      <div class="examples__title">Try an example</div>
+      <div class="examples__grid" id="examplesGrid"></div>
+    </section>
+    <footer class="footer">Built with Flask + Naive Bayes &nbsp;·&nbsp; AI Subject Project</footer>
+  </main>
+  <script src="static/js/config.js"></script>
+  <script src="static/js/api.js"   ></script>
+  <script src="static/js/ui.js"    ></script>
+  <script src="static/js/app.js"   ></script>
+  <script src="static/js/main.js"  ></script>
+</body>
+</html>

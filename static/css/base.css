@@ -1,0 +1,87 @@
+/*
+ * base.css
+ * ─────────────────────────────────────────────────────────────
+ * Global reset and base body styles.
+ * No component-specific rules live here.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin:     0;
+  padding:    0;
+}
+
+/* ── Page body ──────────────────────────────────────────────── */
+body {
+  background:      var(--color-bg);
+  color:           var(--color-text);
+  font-family:     var(--font-body);
+  min-height:      100vh;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  padding:         2rem 1rem;
+}
+
+/* ── Background dot-grid overlay (decorative) ───────────────── */
+body::before {
+  content:    '';
+  position:   fixed;
+  inset:      0;
+  background-image:
+    linear-gradient(rgba(108, 99, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 99, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events:  none;
+  z-index:         0;
+}
+
+/* ── Background glow behind header (decorative) ─────────────── */
+.bg-glow {
+  position:       fixed;
+  width:          600px;
+  height:         600px;
+  border-radius:  50%;
+  background:     radial-gradient(circle, rgba(108, 99, 255, 0.12) 0%, transparent 70%);
+  top:            -200px;
+  left:           50%;
+  transform:      translateX(-50%);
+  pointer-events: none;
+  z-index:        0;
+}
+
+/* ── Layout container ───────────────────────────────────────── */
+.container {
+  position:  relative;
+  z-index:   1;
+  width:     100%;
+  max-width: 640px;
+}
+
+/* ── Keyframe animations (shared across components) ─────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.4; }
+}
